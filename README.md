@@ -1,0 +1,2 @@
+Desenvolvi em VueJS uma Lista dinâmica de títulos de livros, reforçando o aprendizado de interligações de mão dupla dos forms em vue, as diretivas (v-on click e v-for), uso das classes dinâmicas v-bind e aprendendo sobre lifecycle hooks no Vue praticando a implementação do localStorage para guardar os títulos dos livros.
+![20240226_155206Edit](https://github.com/giselegarcia/Lista-de-titulos-em-VueJS/assets/80002777/fc7bce25-abb1-4c4f-9200-ec25f1152e15)
