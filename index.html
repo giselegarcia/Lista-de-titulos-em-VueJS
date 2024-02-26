@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/style.css">
+        <title>Livros para ler</title>
+    </head>
+    <body>   
+        <main id="app"> 
+            <section class="todo-list">         
+                <h3>Lista de livros para ler em 2024</h3>
+                <div class="all-todos">
+                    <div 
+                    v-for="tarefas in tarefa" 
+                    class="single-todo"
+                    :class="{done : tarefas.done}"
+                    @click="tarefas.done = !tarefas.done; storeLista();"
+                    >
+                        <p>{{tarefas.item}}</p>
+                    </div>
+                </div>
+                <button v-if="tarefa.length >= 1" class="clear" @click="tarefa = []; storeLista()">Limpar tudo</button>
+                <input 
+                    v-model="novaTarefa.item" 
+                    type="text" 
+                    placeholder="Escreva uma nova tarefa..."
+                >
+                <button 
+                    @click.stop="addTarefa(); storeLista()" 
+                    class="add"
+                    >Adicionar
+                </button>
+
+                <div class="instructions">
+                    Instruções:
+                    <ul>
+                        <li>Clique no texto da tarefa para alternar entre feita / não feita</li>
+                        <li>Use o botão limpar tudo para remover todas as tarefas</li>
+                        <li>Use o input para adicionar novas tarefas</li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="assets/scripts.js"></script>
+    </body>
+
+</html>
